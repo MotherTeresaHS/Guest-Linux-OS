@@ -14,4 +14,19 @@ The follwoing are the instructions to create a Linux computer that students can 
 
 ## Mount /home/guest to RAM
 
-- now 
+- to make the "guest" user home directory in RAM we will use "tmpfs"
+  - login as "root"
+  -  in /etc/fstab, add the following to the end:
+    tmpfs  /home/guest  tmpfs  defaults,size=1G,mode=0700,uid=guest,gid=guest  0  0
+  - Since the RAM disk is wiped every reboot, the guest user won't have a .bashrc or desktop folders. You can use systemd-tmpfiles to automatically copy default files from /etc/skel every time the machine boots.
+    -  nano /etc/tmpfiles.d/guest-home.conf
+      C  /home/guest  -  -  -  -  /etc/skel
+  - Clear out any existing physical files in the guest home to avoid conflicts:
+    rm -rf /home/guest/*
+  - Mount the new RAM disk:
+    systemctl daemon-reload
+    mount /home/guest
+  - Now, every time you reboot, any files the "guest" user creates will vanish, and a fresh set of default files from /etc/skel will be waiting for them.  
+
+
+ 
