@@ -68,6 +68,26 @@ The follwoing are the instructions to create a Linux computer that students can 
   update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/brave-browser 200
   update-alternatives --set gnome-www-browser /usr/bin/brave-browser
   ```
+- now change the default landing page:
+  ```bash
+  mkdir -p /etc/brave/policies/managed
+  nano /etc/brave/policies/managed/initial_settings.json
+  ```
+  - add to this new file:
+  ```bash
+  {
+    "RestoreOnStartup": 4,
+    "RestoreOnStartupURLs": [
+      "http://172.22.52.50"
+    ],
+    "HomepageLocation": "http://172.22.52.50",
+    "HomepageIsNewTabPage": false
+  }
+  ```
+  - now update the "Exec" line: nano /usr/share/applications/brave-browser.desktop, with:
+  ```bash
+  Exec=/usr/bin/brave-browser-stable --no-default-browser-check %U http://172.22.52.50
+  ```
 
 ## Change Guest's Dot Files
 
