@@ -74,3 +74,15 @@ The follwoing are the instructions to create a Linux computer that students can 
   color-scheme='prefer-dark'
   gtk-theme='Adwaita-dark'
 
+## Set Gnome Toolbar
+
+- login as "root"
+- create file /etc/dconf/profile/user:
+  user-db:user
+  system-db:local
+- create directory: mkdir -p /etc/dconf/db/local.d/
+- create a file named /etc/dconf/db/local.d/00-favorite-apps:
+  [org/gnome/shell]
+  favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop']
+- update:
+  sudo dconf update
