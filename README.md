@@ -17,7 +17,9 @@ The follwoing are the instructions to create a Linux computer that students can 
 - to make the "guest" user home directory in RAM we will use "tmpfs"
   - login as "root"
   -  in /etc/fstab, add the following to the end:
+    ```bash
     tmpfs  /home/guest  tmpfs  defaults,size=1G,mode=0700,uid=guest,gid=guest  0  0
+    ```
   - Since the RAM disk is wiped every reboot, the guest user won't have a .bashrc or desktop folders. You can use systemd-tmpfiles to automatically copy default files from /etc/skel every time the machine boots.
     -  nano /etc/tmpfiles.d/guest-home.conf
       C  /home/guest  -  -  -  -  /etc/skel
