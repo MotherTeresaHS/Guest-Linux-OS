@@ -22,43 +22,59 @@ The follwoing are the instructions to create a Linux computer that students can 
     ```
   - Since the RAM disk is wiped every reboot, the guest user won't have a .bashrc or desktop folders. You can use systemd-tmpfiles to automatically copy default files from /etc/skel every time the machine boots.
     -  nano /etc/tmpfiles.d/guest-home.conf
+      ```bash
       C  /home/guest  -  -  -  -  /etc/skel
       Z  /home/guest  -  guest  guest  -  -
+      ```
   - Clear out any existing physical files in the guest home to avoid conflicts:
+    ```bash
     rm -rf /home/guest/*
+    ```
   - Mount the new RAM disk:
+    ```bash
     systemctl daemon-reload
     mount /home/guest
+    ```
   - Now, every time you reboot, any files the "guest" user creates will vanish, and a fresh set of default files from /etc/skel will be waiting for them.
 
 ## Load APT Software
 
 - login as "root"
 - load the following software:
+  ```bash
   apt install git curl python-is-python3 default-jdk black cpplint build-essential -y
+  ```
 
 ## Load VS Code
 
 - login as "root"
 - goto VS Code downloads webpage and get the AMD64 deb version:
+  ```bash
   apt install ./xxx.deb
+  ```
 
 ## Install Brave Browser
 
 - login as "root":
+  ```bash
   curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
   apt update && apt install brave-browser -y
+  ```
   
 ## Change Guest's Dot Files
 
 - login as "root"
 - goto "/etc/skel":
+  ```bash
   mkdir -p /etc/skel/.config/Code/User/
   nano /etc/skel/.config/Code/User/settings.json
+  ```
   -> Paste your JSON settings into this file
   -> then to "rehydrate the home directory":
+    ```bash
     rm -rf /home/guest/*
+    ```
 
 ## Remove Gnome Tour
 
@@ -69,22 +85,32 @@ The follwoing are the instructions to create a Linux computer that students can 
 
 - login as "root"
 - run:
+  ```bash
   mkdir -p /etc/dconf/db/local.d/
   nano /etc/dconf/db/local.d/01-dark-mode
+  ```
 - add in:
+  ```bash
   [org/gnome/desktop/interface]
   color-scheme='prefer-dark'
   gtk-theme='Adwaita-dark'
+  ```
 
 ## Set Gnome Toolbar
 
 - login as "root"
 - create file /etc/dconf/profile/user:
+  ```bash
   user-db:user
   system-db:local
+  ```
 - create directory: mkdir -p /etc/dconf/db/local.d/
 - create a file named /etc/dconf/db/local.d/00-favorite-apps:
+  ```bash
   [org/gnome/shell]
   favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop']
+  ```
 - update:
+  ```bash
   sudo dconf update
+  ```
