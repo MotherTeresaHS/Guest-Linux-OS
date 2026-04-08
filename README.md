@@ -61,7 +61,14 @@ The follwoing are the instructions to create a Linux computer that students can 
   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
   apt update && apt install brave-browser -y
   ```
-  
+- now to set Brave as the default browser:
+  ```bash
+  update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/brave-browser 200
+  update-alternatives --set x-www-browser /usr/bin/brave-browser
+  update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/brave-browser 200
+  update-alternatives --set gnome-www-browser /usr/bin/brave-browser
+  ```
+
 ## Change Guest's Dot Files
 
 - login as "root"
