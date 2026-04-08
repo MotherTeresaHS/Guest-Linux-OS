@@ -61,8 +61,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 ## Remove Gnome Tour
 
 - login as "root"
-- run:
-  rm -f /etc/xdg/autostart/org.gnome.Tour.desktop
+- unistall the "tour" app
 
 ## Set Guest to Dark Mode
 
