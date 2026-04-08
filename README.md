@@ -26,7 +26,13 @@ The follwoing are the instructions to create a Linux computer that students can 
   - Mount the new RAM disk:
     systemctl daemon-reload
     mount /home/guest
-  - Now, every time you reboot, any files the "guest" user creates will vanish, and a fresh set of default files from /etc/skel will be waiting for them.  
+  - Now, every time you reboot, any files the "guest" user creates will vanish, and a fresh set of default files from /etc/skel will be waiting for them.
+
+## Load APT Software
+
+- login as "root"
+- load the following software:
+  apt install git python-is-python3 default-jdk black cpplint build-essential -y
 
 
  
