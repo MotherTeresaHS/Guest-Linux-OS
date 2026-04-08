@@ -58,5 +58,20 @@ The follwoing are the instructions to create a Linux computer that students can 
   -> then to "rehydrate the home directory":
     rm -rf /home/guest/*
 
+## Remove Gnome Tour
 
-  
+- login as "root"
+- run:
+  rm -f /etc/xdg/autostart/org.gnome.Tour.desktop
+
+## Set Guest to Dark Mode
+
+- login as "root"
+- run:
+  mkdir -p /etc/dconf/db/local.d/
+  nano /etc/dconf/db/local.d/01-dark-mode
+- add in:
+  [org/gnome/desktop/interface]
+  color-scheme='prefer-dark'
+  gtk-theme='Adwaita-dark'
+
