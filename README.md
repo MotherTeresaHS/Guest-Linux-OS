@@ -32,7 +32,19 @@ The follwoing are the instructions to create a Linux computer that students can 
 
 - login as "root"
 - load the following software:
-  apt install git python-is-python3 default-jdk black cpplint build-essential -y
+  apt install git curl python-is-python3 default-jdk black cpplint build-essential -y
 
+## Load VS Code
 
- 
+- login as "root"
+- goto VS Code downloads webpage and get the AMD64 deb version:
+  apt install ./xxx.deb
+
+## Install Brave Browser
+
+- login as "root":
+  curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+  apt update && apt install brave-browser -y
+  
+  
