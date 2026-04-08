@@ -141,3 +141,12 @@ The follwoing are the instructions to create a Linux computer that students can 
   ```bash
   sudo dconf update
   ```
+
+## Set Git user Name and Email
+
+- login as "root"
+- run:
+  ```BASH
+  git config --system user.name "Guest student"
+  git config --system user.email "guest.student@stu.ocsb.ca"
+  ```
