@@ -21,6 +21,7 @@ The follwoing are the instructions to create a Linux computer that students can 
   - Since the RAM disk is wiped every reboot, the guest user won't have a .bashrc or desktop folders. You can use systemd-tmpfiles to automatically copy default files from /etc/skel every time the machine boots.
     -  nano /etc/tmpfiles.d/guest-home.conf
       C  /home/guest  -  -  -  -  /etc/skel
+      Z  /home/guest  -  guest  guest  -  -
   - Clear out any existing physical files in the guest home to avoid conflicts:
     rm -rf /home/guest/*
   - Mount the new RAM disk:
@@ -47,4 +48,15 @@ The follwoing are the instructions to create a Linux computer that students can 
   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
   apt update && apt install brave-browser -y
   
+## Change Guest's Dot Files
+
+- login as "root"
+- goto "/etc/skel":
+  mkdir -p /etc/skel/.config/Code/User/
+  nano /etc/skel/.config/Code/User/settings.json
+  -> Paste your JSON settings into this file
+  -> then to "rehydrate the home directory":
+    rm -rf /home/guest/*
+
+
   
