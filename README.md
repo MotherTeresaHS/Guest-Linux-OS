@@ -52,7 +52,15 @@ The follwoing are the instructions to create a Linux computer that students can 
   ```bash
   apt install ./xxx.deb
   ```
+## Load CS50 Library
 
+- login as "root"
+- run these commands
+  ```bash
+  curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
+  apt install libcs50
+  ```
+  
 ## Install MicroBlocks
 
 - login as "root":
