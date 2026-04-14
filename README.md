@@ -42,7 +42,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 - login as "root"
 - load the following software:
   ```bash
-  apt install git curl python-is-python3 default-jdk black cpplint build-essential -y
+  apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad -y
   ```
 
 ## Load VS Code
