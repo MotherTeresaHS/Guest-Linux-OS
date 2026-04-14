@@ -53,6 +53,11 @@ The follwoing are the instructions to create a Linux computer that students can 
   apt install ./xxx.deb
   ```
 
+## Install MicroBlocks
+
+- login as "root":
+- follow these instructions: https://microblocks.fun/get-started
+
 ## Install Brave Browser
 
 - login as "root":
