@@ -135,7 +135,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 - create a file named /etc/dconf/db/local.d/00-favorite-apps:
   ```bash
   [org/gnome/shell]
-  favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'FreeCAD.desktop']
+  favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'freecad.desktop']
   ```
 - update:
   ```bash
