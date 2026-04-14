@@ -42,8 +42,12 @@ The follwoing are the instructions to create a Linux computer that students can 
 - login as "root"
 - load the following software:
   ```bash
-  apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad -y
+  apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad python3-pip -y
   ```
+- then install:
+```bash
+pip3 install uflash --break-system-packages
+```
 
 ## Load VS Code
 
