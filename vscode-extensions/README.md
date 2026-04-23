@@ -6,3 +6,8 @@ Remember to palce the following in "/etc/environment" file, so it perssists acro
 ```BASH
 export VSCODE_EXTENSIONS="/usr/local/share/vscode-extensions"
 ```
+
+Then make sure "standard" users can see the folder:
+```BASH
+sudo chmod -R 755 /usr/local/share/vscode-extensions
+```
