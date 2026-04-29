@@ -54,6 +54,7 @@ pip3 install uflash --break-system-packages
 
 - login as "root"
 - goto VS Code downloads webpage and get the AMD64 deb version:
+- get it from: https://packages.microsoft.com/repos/vscode/pool/main/c/code/
   ```bash
   apt install ./xxx.deb
   ```
