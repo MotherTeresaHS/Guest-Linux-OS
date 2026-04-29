@@ -72,6 +72,11 @@ pip3 install uflash --break-system-packages
 ## Install MicroBlocks
 
 - login as "root":
+- run this:
+```BASH
+wget https://microblocks.fun/downloads/latest/packages/ublocks-amd64.deb
+apt install ./ublocks-amd64.deb -y
+```
 - follow these instructions: https://microblocks.fun/get-started
 
 ## Install Brave Browser
