@@ -7,6 +7,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 - for this installation I am using Debian 13, Trixie
   - downlaod the latest ISO and burn it to a USB
   - go through the standard install
+    - host is: "cs" 
     - ensure you pick "gnome" desktop and "ssh server"  would also be helpful 
   - for the user create:
     - login: guest
