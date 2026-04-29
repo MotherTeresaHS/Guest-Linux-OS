@@ -112,14 +112,14 @@ apt install ./ublocks-amd64.deb -y
   ```
     - add the following to "/etc/brave/policies/managed/search_policy.json:
   ```bash
-{
-  "DefaultSearchProviderEnabled": true,
-  "DefaultSearchProviderName": "Google",
-  "DefaultSearchProviderSearchURL": "https://google.ca{searchTerms}",
-  "DefaultSearchProviderSuggestURL": "https://google.ca{searchTerms}",
-  "DefaultSearchProviderNewTabURL": "https://google.ca",
-  "DefaultSearchProviderKeyword": "google.ca"
-}
+  {
+    "DefaultSearchProviderEnabled": true,
+    "DefaultSearchProviderName": "Google",
+    "DefaultSearchProviderSearchURL": "https://google.ca{searchTerms}",
+    "DefaultSearchProviderSuggestURL": "https://google.ca{searchTerms}",
+    "DefaultSearchProviderNewTabURL": "https://google.ca",
+    "DefaultSearchProviderKeyword": "google.ca"
+  }
   ```
   - now update the "Exec" line: nano /usr/share/applications/brave-browser.desktop, with:
   ```bash
