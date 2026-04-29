@@ -63,10 +63,10 @@ pip3 install uflash --break-system-packages
 - login as "root"
 - run these commands
   ```bash
-Download the latest release from https://github.com/cs50/libcs50/releases
-Extract libcs50-*.*
-cd libcs50-*
-sudo make install
+  Download the latest release from https://github.com/cs50/libcs50/releases
+  Extract libcs50-*.*
+  cd libcs50-*
+  sudo make install
   ```
   
 ## Install MicroBlocks
