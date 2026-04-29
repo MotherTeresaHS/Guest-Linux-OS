@@ -4,7 +4,7 @@ NOTE: the 2 Java extensions are over 100 MB, so GitHub will not allow you to sav
 - https://open-vsx.org/extension/vscjava/vscode-java-debug
 - https://open-vsx.org/extension/redhat/java
 
-Place the *.vsix files in /usr/local/share/vscode-extensions, run the script in BASH to isntall all into the same directory. This will automatically create the proper named subdirectories that CS Code requires.
+Place the *.vsix files in /usr/local/share/vscode-extensions, run the script in BASH to install all into the same directory. This will automatically create the proper named subdirectories that CS Code requires.
 
 Remember to palce the following in "/etc/environment" file, so it perssists across reboots:
 ```BASH
