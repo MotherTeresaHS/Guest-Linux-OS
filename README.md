@@ -41,9 +41,10 @@ The follwoing are the instructions to create a Linux computer that students can 
 ## Load APT Software
 
 - login as "root"
-- load the following software:
+- load and remove the following software:
   ```bash
   apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad python3-pip gimp mgba-qt -y
+  apt remove firefox-esr -y
   ```
 - then install:
 ```bash
