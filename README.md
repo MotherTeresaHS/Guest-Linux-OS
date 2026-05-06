@@ -121,9 +121,9 @@ apt install ./ublocks-amd64.deb -y
     "DefaultSearchProviderKeyword": "google.ca"
   }
   ```
-  - now update the "Exec" line: nano /usr/share/applications/brave-browser.desktop, with:
+  - now update the "Exec" line: nano /etc/skel/.local/share/applications/brave-browser.desktop, with (and the incognito line as well):
   ```bash
-  Exec=/usr/bin/brave-browser-stable --no-default-browser-check %U http://172.22.52.50
+  Exec=/usr/bin/brave-browser-stable --password-store=basic --user-data-dir="/home/guest/.config/brave" --no-default-browser-check http://172.22.52.50 %U
   ```
 
 ## Change Guest's Dot Files
