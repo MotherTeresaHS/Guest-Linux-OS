@@ -115,10 +115,11 @@ apt install ./ublocks-amd64.deb -y
   {
     "DefaultSearchProviderEnabled": true,
     "DefaultSearchProviderName": "Google",
-    "DefaultSearchProviderSearchURL": "https://google.ca{searchTerms}",
-    "DefaultSearchProviderSuggestURL": "https://google.ca{searchTerms}",
+    "DefaultSearchProviderSearchURL": "https://www.google.ca/search?q={searchTerms}",
+    "DefaultSearchProviderSuggestURL": "https://www.google.ca/complete/search?output=chrome&q={searchTerms}",
     "DefaultSearchProviderNewTabURL": "https://google.ca",
-    "DefaultSearchProviderKeyword": "google.ca"
+    "DefaultSearchProviderKeyword": "google.ca",
+    "DefaultSearchProviderIconURL": "https://www.google.ca/favicon.ico"
   }
   ```
   - now update the "Exec" line: nano /etc/skel/.local/share/applications/brave-browser.desktop, with (and the incognito line as well):
