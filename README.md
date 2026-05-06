@@ -107,7 +107,11 @@ apt install ./ublocks-amd64.deb -y
       "http://172.22.52.50"
     ],
     "HomepageLocation": "http://172.22.52.50",
-    "HomepageIsNewTabPage": false
+    "HomepageIsNewTabPage": false,
+    "FirstRunTabs": [""],
+    "PromotionsEnabled": false,
+    "MetricsReportingEnabled": false,
+    "BraveP3AEnabled": false
   }
   ```
     - add the following to "/etc/brave/policies/managed/search_policy.json:
