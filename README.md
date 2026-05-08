@@ -20,6 +20,9 @@ The follwoing are the instructions to create a Linux computer that students can 
   - in "/etc/defauly/grub" file change:
   ```BASH
   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3"
+  GRUB_TIMEOUT=0
+  GRUB_TIMEOUT_STYLE=hidden
+  GRUB_RECORDFAIL_TIMEOUT=0
   ```
 - then to make the change permanent:
 ```BASH
