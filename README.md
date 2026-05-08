@@ -13,6 +13,19 @@ The follwoing are the instructions to create a Linux computer that students can 
     - login: guest
   - remember that the "guest" user by default does not have "sudo" privileges and that is what we what, DO NOT give guest "sudo" access
 
+## Cleanup Boot Screen
+
+- login as "root"
+- to remove as much "linux text" startup screen:
+  - in "/etc/defauly/grub" file change:
+  ```BASH
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3"
+  ```
+- then to make the change permanent:
+```BASH
+update-grup
+```
+
 ## Mount /home/guest to RAM
 
 - to make the "guest" user home directory in RAM we will use "tmpfs"
