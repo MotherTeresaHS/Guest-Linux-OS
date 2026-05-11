@@ -128,7 +128,7 @@ apt install ./ublocks-amd64.deb -y
 
 - add in:
   ```bash
-  pref("browser.startup.homepage", "https://172.22.52.50");
+  pref("browser.startup.homepage", "https://172.22.52.50|https://gmail.com");
   ```  
   
 ## Install Brave Browser
