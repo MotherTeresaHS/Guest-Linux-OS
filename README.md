@@ -116,9 +116,7 @@ apt install ./ublocks-amd64.deb -y
       "OverridePostUpdatePage": "",
       "DontCheckDefaultBrowser": true,
       "DisableTelemetry": true,
-      "NoDefaultBookmarks": true,
-      "Fullscreen": true,
-      "DisableWindowMinMax": true
+      "NoDefaultBookmarks": true
     }
   }
   ```
