@@ -17,7 +17,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 
 - login as "root"
 - to remove as much "linux text" startup screen:
-  - in "/etc/defauly/grub" file change:
+  - in "/etc/default/grub" file change:
   ```BASH
   GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3"
   GRUB_TIMEOUT=0
