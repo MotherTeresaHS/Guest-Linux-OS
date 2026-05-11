@@ -13,6 +13,13 @@ The follwoing are the instructions to create a Linux computer that students can 
     - login: guest
   - remember that the "guest" user by default does not have "sudo" privileges and that is what we what, DO NOT give guest "sudo" access
 
+## Change Power Settings
+- login as "root"
+- run this command:
+```BASH
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+
 ## Cleanup Boot Screen
 
 - login as "root"
