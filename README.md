@@ -26,7 +26,7 @@ The follwoing are the instructions to create a Linux computer that students can 
   ```
 - then to make the change permanent:
 ```BASH
-update-grup
+update-grub
 ```
 
 ## Mount /home/guest to RAM
