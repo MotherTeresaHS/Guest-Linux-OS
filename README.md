@@ -167,7 +167,7 @@ apt install ./ublocks-amd64.deb -y
 - login as "root"
 - unistall the "tour" app
 ```BASH
-apt remove gnome-tour
+apt remove gnome-tour -y
 ```
 
 ## Set Guest to Dark Mode
