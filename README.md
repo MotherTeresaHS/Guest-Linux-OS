@@ -96,6 +96,43 @@ apt install ./ublocks-amd64.deb -y
 ```
 - follow these instructions: https://microblocks.fun/get-started
 
+## FireFox Fix
+
+- create directory:
+  ```bash
+  mkdir -p /usr/lib/firefox-esr/distribution
+  ```
+  
+- create file:
+  ```bash
+  nano /usr/lib/firefox-esr/distribution/policies.json
+  ```
+  
+- add in:
+  ```bash
+  {
+    "policies": {
+      "OverrideFirstRunPage": "",
+      "OverridePostUpdatePage": "",
+      "DontCheckDefaultBrowser": true,
+      "DisableTelemetry": true,
+      "NoDefaultBookmarks": true,
+      "Fullscreen": true,
+      "DisableWindowMinMax": true
+    }
+  }
+  ```
+      
+- create file:
+  ```bash
+  nano /etc/firefox-esr/syspref.js
+  ```
+
+- add in:
+  ```bash
+  pref("browser.startup.homepage", "https://172.22.52.50");
+  ```  
+  
 ## Install Brave Browser
 
 - login as "root":
