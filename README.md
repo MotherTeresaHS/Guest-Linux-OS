@@ -231,7 +231,7 @@ apt remove gnome-tour -y
   user-db:user
   system-db:local
   ```
-- create directory: mkdir -p /etc/dconf/db/local.d/
+  
 - create a file named /etc/dconf/db/local.d/00-favorite-apps:
   ```bash
   [org/gnome/shell]
