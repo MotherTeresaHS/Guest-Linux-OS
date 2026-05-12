@@ -69,10 +69,6 @@ update-grub
   apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad python3-pip gimp mgba-qt -y
   apt remove firefox-esr -y
   ```
-- then install:
-```bash
-pip3 install uflash --break-system-packages
-```
 
 ## Load VS Code
 
@@ -88,7 +84,7 @@ pip3 install uflash --break-system-packages
 - run these commands
   ```bash
   Download the latest release from https://github.com/cs50/libcs50/releases
-  Extract libcs50-*.*
+  Extract libcs50-*.*: tar -xvzf ./v...
   cd libcs50-*
   sudo make install
   ```
