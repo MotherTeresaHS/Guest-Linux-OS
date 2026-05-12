@@ -123,13 +123,14 @@ usermod -a -G tty guest
   }
   ```
       
-- create file:
+- edit file:
   ```bash
   nano /etc/firefox-esr/syspref.js
   ```
 
 - add in:
   ```bash
+  // startup tabs
   pref("browser.startup.homepage", "https://172.22.52.50|https://gmail.com");
   ```  
   
