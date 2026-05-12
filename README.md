@@ -131,7 +131,7 @@ usermod -a -G tty guest
 - add in:
   ```bash
   // startup tabs
-  pref("browser.startup.homepage", "https://172.22.52.50|https://gmail.com");
+  pref("browser.startup.homepage", "http://172.22.52.50|https://gmail.com");
   ```  
   
 ## Install Brave Browser
