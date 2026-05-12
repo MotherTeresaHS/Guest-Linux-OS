@@ -239,7 +239,7 @@ apt remove gnome-tour -y
   ```
 - update:
   ```bash
-  sudo dconf update
+  dconf update
   ```
 
 ## Set Git user Name and Email
