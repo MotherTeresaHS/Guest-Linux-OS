@@ -7,10 +7,34 @@ The follwoing are the instructions to create a Linux computer that students can 
 - for this installation I am using Debian 13, Trixie
   - downlaod the latest ISO and burn it to a USB
   - go through the standard install
+    - host is: "cs" 
     - ensure you pick "gnome" desktop and "ssh server"  would also be helpful 
   - for the user create:
     - login: guest
   - remember that the "guest" user by default does not have "sudo" privileges and that is what we what, DO NOT give guest "sudo" access
+
+## Change Power Settings
+- login as "root"
+- run this command:
+```BASH
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+
+## Cleanup Boot Screen
+
+- login as "root"
+- to remove as much "linux text" startup screen:
+  - in "/etc/default/grub" file change:
+  ```BASH
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3"
+  GRUB_TIMEOUT=0
+  GRUB_TIMEOUT_STYLE=hidden
+  GRUB_RECORDFAIL_TIMEOUT=0
+  ```
+- then to make the change permanent:
+```BASH
+update-grub
+```
 
 ## Mount /home/guest to RAM
 
@@ -40,19 +64,17 @@ The follwoing are the instructions to create a Linux computer that students can 
 ## Load APT Software
 
 - login as "root"
-- load the following software:
+- load and remove the following software:
   ```bash
-  apt install git curl python-is-python3 default-jdk black cpplint build-essential freecad python3-pip gimp -y
+  apt install git curl python-is-python3 default-jdk black cpplint build-essential gdb freecad python3-pip gimp mgba-qt -y
+  apt remove firefox-esr -y
   ```
-- then install:
-```bash
-pip3 install uflash --break-system-packages
-```
 
 ## Load VS Code
 
 - login as "root"
 - goto VS Code downloads webpage and get the AMD64 deb version:
+- get it from: https://packages.microsoft.com/repos/vscode/pool/main/c/code/
   ```bash
   apt install ./xxx.deb
   ```
@@ -61,15 +83,57 @@ pip3 install uflash --break-system-packages
 - login as "root"
 - run these commands
   ```bash
-  curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
-  apt install libcs50
+  Download the latest release from https://github.com/cs50/libcs50/releases
+  Extract libcs50-*.*: tar -xvzf ./v...
+  cd libcs50-*
+  make install
   ```
   
 ## Install MicroBlocks
 
 - login as "root":
-- follow these instructions: https://microblocks.fun/get-started
+- run this:
+```BASH
+wget https://microblocks.fun/downloads/latest/packages/ublocks-amd64.deb
+apt install ./ublocks-amd64.deb -y
+```
+- follow these instructions: https://microblocks.fun/get-started:
+```BASH
+usermod -a -G dialout guest
+usermod -a -G tty guest
+```
 
+## FireFox Fix
+  
+- create file:
+  ```bash
+  nano /usr/lib/firefox-esr/distribution/policies.json
+  ```
+  
+- add in:
+  ```bash
+  {
+    "policies": {
+      "OverrideFirstRunPage": "",
+      "OverridePostUpdatePage": "",
+      "DontCheckDefaultBrowser": true,
+      "DisableTelemetry": true,
+      "NoDefaultBookmarks": true
+    }
+  }
+  ```
+      
+- edit file:
+  ```bash
+  nano /etc/firefox-esr/firefox-esr.js
+  ```
+
+- add in:
+  ```bash
+  // startup tabs
+  pref("browser.startup.homepage", "http://172.22.52.50|https://gmail.com");
+  ```  
+  
 ## Install Brave Browser
 
 - login as "root":
@@ -98,12 +162,28 @@ pip3 install uflash --break-system-packages
       "http://172.22.52.50"
     ],
     "HomepageLocation": "http://172.22.52.50",
-    "HomepageIsNewTabPage": false
+    "HomepageIsNewTabPage": false,
+    "FirstRunTabs": [""],
+    "PromotionsEnabled": false,
+    "MetricsReportingEnabled": false,
+    "BraveP3AEnabled": false
   }
   ```
-  - now update the "Exec" line: nano /usr/share/applications/brave-browser.desktop, with:
+    - add the following to "/etc/brave/policies/managed/search_policy.json:
   ```bash
-  Exec=/usr/bin/brave-browser-stable --no-default-browser-check %U http://172.22.52.50
+  {
+    "DefaultSearchProviderEnabled": true,
+    "DefaultSearchProviderName": "Google",
+    "DefaultSearchProviderSearchURL": "https://www.google.ca/search?q={searchTerms}",
+    "DefaultSearchProviderSuggestURL": "https://www.google.ca/complete/search?output=chrome&q={searchTerms}",
+    "DefaultSearchProviderNewTabURL": "https://google.ca",
+    "DefaultSearchProviderKeyword": "google.ca",
+    "DefaultSearchProviderIconURL": "https://www.google.ca/favicon.ico"
+  }
+  ```
+  - now update the "Exec" line: nano /etc/skel/.local/share/applications/brave-browser.desktop, with (and the incognito line as well):
+  ```bash
+  Exec=/usr/bin/brave-browser-stable --password-store=basic --user-data-dir="/home/guest/.config/brave" --no-default-browser-check --no-first-run http://172.22.52.50 %U
   ```
 
 ## Change Guest's Dot Files
@@ -124,6 +204,9 @@ pip3 install uflash --break-system-packages
 
 - login as "root"
 - unistall the "tour" app
+```BASH
+apt remove gnome-tour -y
+```
 
 ## Set Guest to Dark Mode
 
@@ -148,15 +231,15 @@ pip3 install uflash --break-system-packages
   user-db:user
   system-db:local
   ```
-- create directory: mkdir -p /etc/dconf/db/local.d/
+  
 - create a file named /etc/dconf/db/local.d/00-favorite-apps:
   ```bash
   [org/gnome/shell]
-  favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'freecad.desktop']
+  favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop']
   ```
 - update:
   ```bash
-  sudo dconf update
+  dconf update
   ```
 
 ## Set Git user Name and Email
