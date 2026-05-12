@@ -22,6 +22,8 @@ Then make sure "standard" users can see the folder:
 chmod -R 755 /usr/local/share/vscode-extensions
 ```
 
+Then run the script to load all the extensions
+
 ## C/C++ Note
 
 - remember, the .vscode folder and files need to be in each repo for the debugger to work!
