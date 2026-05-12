@@ -104,11 +104,6 @@ usermod -a -G tty guest
 ```
 
 ## FireFox Fix
-
-- create directory:
-  ```bash
-  mkdir -p /usr/lib/firefox-esr/distribution
-  ```
   
 - create file:
   ```bash
