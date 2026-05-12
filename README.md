@@ -17,7 +17,7 @@ The follwoing are the instructions to create a Linux computer that students can 
 - login as "root"
 - run this command:
 ```BASH
-sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
 ## Cleanup Boot Screen
