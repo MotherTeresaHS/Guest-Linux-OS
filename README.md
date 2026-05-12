@@ -125,7 +125,7 @@ usermod -a -G tty guest
       
 - edit file:
   ```bash
-  nano /etc/firefox-esr/syspref.js
+  nano /etc/firefox-esr/firefox-esr.js
   ```
 
 - add in:
