@@ -86,7 +86,7 @@ update-grub
   Download the latest release from https://github.com/cs50/libcs50/releases
   Extract libcs50-*.*: tar -xvzf ./v...
   cd libcs50-*
-  sudo make install
+  make install
   ```
   
 ## Install MicroBlocks
