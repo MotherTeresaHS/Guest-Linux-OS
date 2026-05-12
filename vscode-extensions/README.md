@@ -21,3 +21,7 @@ Then make sure "standard" users can see the folder:
 ```BASH
 chmod -R 755 /usr/local/share/vscode-extensions
 ```
+
+## C/C++ Note
+
+- remember, the .vscode folder and files need to be in each repo for the debugger to work!
