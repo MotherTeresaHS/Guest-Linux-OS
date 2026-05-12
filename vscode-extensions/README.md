@@ -1,8 +1,6 @@
 # Installing VS Code Extensions
 
-NOTE: the 2 Java extensions are over 100 MB, so GitHub will not allow you to save them. Download from:
-- https://open-vsx.org/extension/vscjava/vscode-java-debug
-- https://open-vsx.org/extension/redhat/java
+NOTE: download the following extension in the "/usr/local/share/vscode-extensions" folder
 ```BASH
 wget https://open-vsx.org/api/hediet/vscode-drawio/1.6.6/file/hediet.vscode-drawio-1.6.6.vsix
 wget https://open-vsx.org/api/medo64/render-crlf/1.9.8/file/medo64.render-crlf-1.9.8.vsix
