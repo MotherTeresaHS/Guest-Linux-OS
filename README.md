@@ -235,7 +235,7 @@ apt remove gnome-tour -y
 - create a file named /etc/dconf/db/local.d/00-favorite-apps:
   ```bash
   [org/gnome/shell]
-  favorite-apps=['brave-browser.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop']
+  favorite-apps=['firefox-esr.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop']
   ```
 - update:
   ```bash
