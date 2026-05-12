@@ -97,7 +97,11 @@ update-grub
 wget https://microblocks.fun/downloads/latest/packages/ublocks-amd64.deb
 apt install ./ublocks-amd64.deb -y
 ```
-- follow these instructions: https://microblocks.fun/get-started
+- follow these instructions: https://microblocks.fun/get-started:
+```BASH
+usermod -a -G dialout guest
+usermod -a -G tty guest
+```
 
 ## FireFox Fix
 
