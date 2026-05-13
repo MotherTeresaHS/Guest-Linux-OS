@@ -79,6 +79,11 @@ update-grub
   wget https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.108.0-1767881962_amd64.deb
   apt install ./xxx.deb
   ```
+- now pin to this version, so it will not try and update
+```BASH
+apt-mark hold code
+```
+
 ## Load CS50 Library
 
 - login as "root"
