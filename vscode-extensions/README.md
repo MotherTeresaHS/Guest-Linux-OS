@@ -2,6 +2,8 @@
 
 NOTE: download the following extension in the "/usr/local/share/vscode-extensions" folder
 ```BASH
+mkdir /usr/local/share/vscode-extensions
+cd /usr/local/share/vscode-extensions
 wget https://open-vsx.org/api/hediet/vscode-drawio/1.6.6/file/hediet.vscode-drawio-1.6.6.vsix
 wget https://open-vsx.org/api/medo64/render-crlf/1.9.8/file/medo64.render-crlf-1.9.8.vsix
 wget https://open-vsx.org/api/oderwat/indent-rainbow/8.3.1/file/oderwat.indent-rainbow-8.3.1.vsix
