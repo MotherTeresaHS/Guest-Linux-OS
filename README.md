@@ -207,3 +207,25 @@ apt remove gnome-tour -y
   git config --system user.name "Guest student"
   git config --system user.email "guest.student@stu.ocsb.ca"
   ```
+
+## Now lock Debian APT from Updating!
+
+- login as "root"
+- run:
+  ```BASH
+  systemctl disable --now unattended-upgrades
+  systemctl mask apt-daily.timer apt-daily-upgrade.timer
+  ```
+- edit this file: nano /etc/apt/apt.conf.d/20auto-upgrades
+```BASH
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+APT::Periodic::Unattended-Upgrade "0";
+```
+- edit this file: nano /etc/apt/preferences.d/99-lock-everything
+```BASH
+Package: *
+Pin: release *
+Pin-Priority: -1
+```
