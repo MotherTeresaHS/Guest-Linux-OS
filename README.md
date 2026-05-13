@@ -146,6 +146,9 @@ usermod -a -G tty guest
     ```bash
     rm -rf /home/guest/*
     ```
+## Load VS Code Extensions
+
+- see instructions on other page
 
 ## Remove Gnome Tour
 
