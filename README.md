@@ -79,10 +79,6 @@ update-grub
   wget https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.108.0-1767881962_amd64.deb
   apt install ./xxx.deb
   ```
-- now pin to this version, so it will not try and update
-```BASH
-apt-mark hold code
-```
 
 ## Load CS50 Library
 
@@ -213,16 +209,10 @@ apt remove gnome-tour -y
 - login as "root"
 - run:
   ```BASH
-  systemctl disable --now unattended-upgrades
+  systemctl disable --now apt-daily.timer apt-daily-upgrade.timer
   systemctl mask apt-daily.timer apt-daily-upgrade.timer
   ```
-- edit this file: nano /etc/apt/apt.conf.d/20auto-upgrades
-```BASH
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Download-Upgradeable-Packages "0";
-APT::Periodic::AutocleanInterval "0";
-APT::Periodic::Unattended-Upgrade "0";
-```
+
 - edit this file: nano /etc/apt/preferences.d/99-lock-everything
 ```BASH
 Package: *
