@@ -74,7 +74,9 @@ update-grub
 - login as "root"
 - goto VS Code downloads webpage and get the AMD64 deb version:
 - get it from: https://packages.microsoft.com/repos/vscode/pool/main/c/code/
+- this version "code_1.108.0-1767881962_amd64.deb" is a good pinned version, it allows AI to be turned off but does not have the "popup" on 1st start
   ```bash
+  wget https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.108.0-1767881962_amd64.deb
   apt install ./xxx.deb
   ```
 ## Load CS50 Library
