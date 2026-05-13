@@ -66,8 +66,7 @@ update-grub
 - login as "root"
 - load and remove the following software:
   ```bash
-  apt install git curl python-is-python3 default-jdk black cpplint build-essential gdb freecad python3-pip gimp mgba-qt -y
-  apt remove firefox-esr -y
+  apt install git curl python-is-python3 python3-pip black default-jdk build-essential gdb cpplint arduino freecad gimp mgba-qt -y
   ```
 
 ## Load VS Code
