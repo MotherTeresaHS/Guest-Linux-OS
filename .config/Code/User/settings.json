@@ -49,5 +49,7 @@
     "workbench.tips.enabled": false,
     "python.defaultInterpreterPath": "/usr/bin/python",
     "chat.disableAIFeatures": true,
-    "extensions.autoUpdate": false
+    "extensions.autoUpdate": false,
+    "update.mode": "none",
+    "extensions.autoCheckUpdates": false
 }
