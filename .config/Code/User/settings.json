@@ -48,6 +48,7 @@
     "workbench.startupEditor": "none",
     "workbench.tips.enabled": false,
     "python.defaultInterpreterPath": "/usr/bin/python",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-21-openjdk-amd64",
     "chat.disableAIFeatures": true,
     "extensions.autoUpdate": false,
     "update.mode": "none",
