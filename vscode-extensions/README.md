@@ -14,6 +14,9 @@ Place the *.vsix files in /usr/local/share/vscode-extensions, run the script in 
 
 Remember to place the following in "/etc/environment" file, so it perssists across reboots:
 ```BASH
+nano /etc/environment
+```
+```BASH
 export VSCODE_EXTENSIONS="/usr/local/share/vscode-extensions"
 ```
 
