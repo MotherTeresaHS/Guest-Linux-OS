@@ -84,10 +84,11 @@ update-grub
 ## Load CS50 Library
 
 - login as "root"
-- run these commands
+- Download the latest release from https://github.com/cs50/libcs50/releases
+- Extract libcs50-*.*: tar -xvzf ./v...
   ```bash
-  Download the latest release from https://github.com/cs50/libcs50/releases
-  Extract libcs50-*.*: tar -xvzf ./v...
+  wget https://github.com/cs50/libcs50/archive/refs/tags/v11.0.3.tar.gz
+  tar -xvzf ./v11.0.3.tar.gz
   cd libcs50-*
   make install
   ```
