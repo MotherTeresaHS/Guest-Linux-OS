@@ -89,7 +89,7 @@ update-grub
   ```bash
   wget https://github.com/cs50/libcs50/archive/refs/tags/v11.0.3.tar.gz
   tar -xvzf ./v11.0.3.tar.gz
-  cd libcs50-*
+  cd libcs50-11.0.3
   make install
   ```
   
