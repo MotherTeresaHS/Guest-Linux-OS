@@ -91,6 +91,7 @@ update-grub
   tar -xvzf ./v11.0.3.tar.gz
   cd libcs50-11.0.3
   make install
+  cd ..
   ```
   
 ## Install MicroBlocks
