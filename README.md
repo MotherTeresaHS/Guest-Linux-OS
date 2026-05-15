@@ -108,9 +108,9 @@ update-grub
   mkdir /tmp/gbdk
   cd /tmp/gbdk
   wget https://github.com/gbdk-2020/gbdk-2020/releases/download/4.5.0/gbdk-linux64.tar.gz
-  tar -zxf gbdk-linux64.tar.gz --directory /opt
+  tar -zxf gbdk-linux64.tar.gz --directory /usr/bin/
   cd /tmp
-  sh -c "echo 'export PATH=\$PATH:/opt/gbdk/bin' >> /etc/skel/.bashrc"
+  sh -c "echo 'export PATH=\$PATH:/usr/bin/gbdk/bin' >> /etc/skel/.bashrc"
   ```
   
 ## Install MicroBlocks
