@@ -65,7 +65,7 @@ update-grub
 ## Load APT Software
 
 - login as "root"
-- load and remove the following software:
+- load the following software:
   - python "python-is-python3 python3-pip black"
   - java "default-jdk"
   - C & C++ "build-essential gdb cpplint"
