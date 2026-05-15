@@ -224,6 +224,7 @@ apt remove gnome-tour -y
   ```BASH
   git config --system user.name "Guest student"
   git config --system user.email "guest.student@stu.ocsb.ca"
+  git config --global credential.helper 'cache --timeout=5400'
   ```
 
 ## Now lock Debian APT from Updating!
