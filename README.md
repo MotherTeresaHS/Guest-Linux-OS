@@ -66,8 +66,12 @@ update-grub
 
 - login as "root"
 - load and remove the following software:
+  - python "python-is-python3 python3-pip black"
+  - java "default-jdk"
+  - C & C++ "build-essential gdb cpplint"
+  - GBDK "libgc1c mgba-qt"
   ```bash
-  apt install git curl python-is-python3 python3-pip black default-jdk build-essential gdb cpplint neovim arduino freecad gimp mgba-qt -y
+  apt install git curl neovim python-is-python3 python3-pip black default-jdk build-essential gdb cpplint arduino freecad gimp libgc1c mgba-qt -y
   ```
 
 ## Load VS Code
@@ -87,11 +91,26 @@ update-grub
 - Download the latest release from https://github.com/cs50/libcs50/releases
 - Extract libcs50-*.*: tar -xvzf ./v...
   ```bash
+  mkdir /tmp/cs50
+  cd /tmp/cs50
   wget https://github.com/cs50/libcs50/archive/refs/tags/v11.0.3.tar.gz
   tar -xvzf ./v11.0.3.tar.gz
   cd libcs50-11.0.3
   make install
-  cd ..
+  cd /tmp
+  ```
+
+## Load GBDK Library
+
+- login as "root"
+- Download the latest release from https://github.com/gbdk-2020/gbdk-2020/releases
+  ```bash
+  mkdir /tmp/gbdk
+  cd /tmp/gbdk
+  wget https://github.com/gbdk-2020/gbdk-2020/releases/download/4.5.0/gbdk-linux64.tar.gz
+  tar -zxf gbdk-linux64.tar.gz --directory /opt
+  cd /tmp
+  sh -c "echo 'source /etc/profile.d/gbdk.sh' >> /etc/skel/.bashrc"
   ```
   
 ## Install MicroBlocks
